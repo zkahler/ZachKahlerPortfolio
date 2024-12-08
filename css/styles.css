@@ -97,10 +97,6 @@ header img {
 
 /* Desktop Styles */
 @media (min-width: 769px) {
-    .dropdown {
-        display: none; /* Hide drop-down menu on desktop */
-    }
-
     .nav-menu {
         display: flex; /* Show horizontal nav menu on desktop */
     }
