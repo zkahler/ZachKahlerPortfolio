@@ -25,42 +25,6 @@ header img {
     object-fit: cover;
 }
 
-header h1 {
-    margin: 0;
-    text-align: center;
-}
-
-header h3 {
-    margin: 5px 0 0;
-}
-
-/* Main Section */
-main#main-section {
-    background-color: #ffffff; /* Light green background */
-    transition: background 1s ease; /* Smooth transition for background color */
-}
-
-/* Ensure the parent container uses Flexbox */
-.grid-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Horizontally center items */
-    justify-content: flex-start; /* Align items to the start (top) */
-}
-
-.centered-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Add some margin to position below the title */
-}
-
-.centered-image img {
-    width: 300px; /* Adjust the size as needed */
-    border-radius: 50%;
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
-
 /* Horizontal Navigation Menu */
 .nav-menu {
     display: flex;
@@ -93,7 +57,8 @@ main#main-section {
     font-size: 17px; /* Slightly increase font size on hover */
 }
 
-.page-title {
+/* Page Title */
+.page-title, .page-title-smaller {
     text-align: center;
     color: #204c39;
     padding: 20px 0;
@@ -102,69 +67,26 @@ main#main-section {
 }
 
 .page-title-smaller {
-    text-align: center;
-    color: #204c39;
-    padding: 20px 0;
     font-size: 1em;
-    background-color: #ccffcc;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Main Section */
+main#main-section {
+    background-color: #ffffff; /* Light green background */
+    transition: background 1s ease; /* Smooth transition for background color */
+}
 
-    .nav-menu li {
-        margin: 10px 0;
-    }
+.centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add some margin to position below the title */
+}
 
-    .nav-menu a {
-        padding: 10px 0;
-    }
-
-    .page-title {
-        margin-top: 10px; /* Adjust margin for mobile */
-        font-size: 1.5em;
-    }
-
-    .page-title-smaller {
-            margin-top: 10px; /* Adjust margin for mobile */
-            font-size: .5em;
-        }
-    }
-
-    .centered-image {
-        margin-top: 10px; /* Adjust for mobile */
-    }
-
-    .centered-image img {
-        width: 200px; /* Adjust size for mobile */
-    }
-
-    form {
-        padding: 10px;
-        border-radius: 4px;
-
-    }
-
-    form label {
-        margin-bottom: 5px;
-
-    }
-
-    form input, form textarea {
-        margin-bottom: 10px;
-        padding: 8px;
-
-    }
-
-    form button {
-        padding: 8px;
-        font-size: 14px
-
-    }
+.centered-image img {
+    width: 300px; /* Adjust the size as needed */
+    border-radius: 50%;
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Hero Section */
@@ -205,16 +127,17 @@ section {
 
 figure {
     max-width: 100%; /* Allows the figure to be 100% of its container's width */
-    width: 600px; /* Set a maximum width */
+    width: 100%; /* Set a maximum width */
     margin: auto; /* Center the figure element */
     padding: 10px; /* Optional: Add some padding */
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
-figure video,
-figure img {
+figure img,
+figure video {
     width: 100%; /* Make the video or image take up the full width of the figure */
     height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
 }
 
 figcaption {
@@ -330,3 +253,70 @@ form button:hover {
     background-color: #1e663a; /* Darker green on hover */
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu a {
+        padding: 10px 0;
+    }
+
+    .page-title {
+        margin-top: 10px; /* Adjust margin for mobile */
+        font-size: 1.5em;
+    }
+
+    .page-title-smaller {
+        margin-top: 10px; /* Adjust margin for mobile */
+        font-size: 1em;
+    }
+
+    .centered-image {
+        margin-top: 10px; /* Adjust for mobile */
+    }
+
+    .centered-image img {
+        width: 200px; /* Adjust size for mobile */
+    }
+
+    form {
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    form label {
+        margin-bottom: 5px;
+    }
+
+    form input, form textarea {
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+    form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    figure img,
+    figure video {
+        width: 100%; /* Ensure images and videos are responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    figure {
+        padding: 5px;
+        border-radius: 4px; /* Adjust border radius for mobile */
+    }
+
+    figcaption {
+        margin-top: 5px;
+    }
+}
