@@ -126,6 +126,13 @@ main#main-section {
 
     .page-title {
         margin-top: 10px; /* Adjust margin for mobile */
+        font-size: 1.5em;
+    }
+
+    .page-title-smaller {
+            margin-top: 10px; /* Adjust margin for mobile */
+            font-size: .5em;
+        }
     }
 
     .centered-image {
@@ -134,6 +141,29 @@ main#main-section {
 
     .centered-image img {
         width: 200px; /* Adjust size for mobile */
+    }
+
+    form {
+        padding: 10px;
+        border-radius: 4px;
+
+    }
+
+    form label {
+        margin-bottom: 5px;
+
+    }
+
+    form input, form textarea {
+        margin-bottom: 10px;
+        padding: 8px;
+
+    }
+
+    form button {
+        padding: 8px;
+        font-size: 14px
+
     }
 }
 
