@@ -1,0 +1,120 @@
+<!-- This aframe was created by: Zach Kahler, 11/8/24 Edited by Jeremy Kirkpatrick and Zach Kahler 11/9/24-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- camera and cursor -->
+      <a-camera position="0 1.6 0" look-controls="pointerLockEnabled: true; hmdEnabled: true; reverseMouseDrag: false">
+        <a-cursor fuse="true" fuse-timeout="1500" raycaster="objects: .clickable"></a-cursor>
+  
+        <!-- text positioned in the center -->
+        <a-text id="infoText" value="" position="0 0 -1" color="red" wrap-count="10"></a-text>
+      </a-camera>
+  
+      <!-- planet spheres in the sky -->
+      <a-sphere id="zarnathia" class="clickable" position="20 45 -90" rotation="15" radius="18" src="https://i.postimg.cc/kg4bb0WR/fiery.png"></a-sphere>
+      <a-sphere id="kryos" class="clickable" position="30 20 -45" radius="7" src="https://i.postimg.cc/Hs3MjY8C/green.png"></a-sphere>
+      <a-sphere id="lumoria" class="clickable" position="-10 50 50" radius="12" src="https://i.postimg.cc/v8rfFLQT/moon.png"></a-sphere>
+      <a-sphere id="pyrolis" class="clickable" position="20 30 -10" rotation="-90" radius="6" src="https://i.postimg.cc/cHQgW0G2/red.png"></a-sphere>
+      <a-sphere id="ventara" class="clickable" position="-15 -15 30" radius="6" rotation="-90" src="https://i.postimg.cc/4ysKNqJd/pluto.png"></a-sphere>
+      <a-sphere id="astrion" class="clickable" position="40 -40 -30" radius="14" src="https://i.postimg.cc/bwB2HmRC/odd.jpg"></a-sphere>
+          <a-ring position="40 -40 -30" radius-inner="15" radius-outer="16" color="#bebebe" opacity="0.7" rotation="-50 0 0"></a-ring> 
+          <a-ring position="40 -40 -30" radius-inner="16.5" radius-outer="19" color="#bebebe" opacity="0.5" rotation="-50 0 0"></a-ring> 
+          <a-ring position="40 -40 -30" radius-inner="19.5" radius-outer="22" color="#bebebe" opacity="0.3" rotation="-50 0 0"></a-ring> 
+          <a-ring position="40 -40 -30" radius-inner="22.5" radius-outer="25" color="#bebebe" opacity="0.1" rotation="-50 0 0"></a-ring>
+      <a-sphere id="odyssia" class="clickable" position="-14 20 -34" radius="8" src="https://i.postimg.cc/3N1ky1RZ/yellow.png"></a-sphere>
+      <a-sphere id="mythra" class="clickable" position="-25 -15 -30" rotation="-75" radius="16" src="https://i.postimg.cc/Wbsr2F3n/earth.png"></a-sphere>
+      <a-sphere id="celestara" class="clickable" position="25 10 25" radius="14" src="https://i.postimg.cc/25LLHncz/purple.png"></a-sphere>
+      <a-sphere id="novalux" class="clickable" position="150 80 -150" radius="30" rotation="0 90 90" src="https://i.postimg.cc/SsDXRVjf/nova.png"></a-sphere>
+  
+      <!-- asteroid entity -->
+      <a-entity id="astroth1" class="clickable" material="src: https://i.postimg.cc/kXnmf91G/asteroid-texture.jpg" 
+      geometry="primitive: cone; radiusBottom: 2; radiusTop: 0.5; height: 3" position="20 2 -10" rotation="45 30 0"></a-entity>
+      <a-entity id="astroth2" class="clickable" material="src: https://i.postimg.cc/kXnmf91G/asteroid-texture.jpg" 
+      geometry="primitive: dodecahedron; radius: 1.5" position="19.8 2.5 -9.8" rotation="30 15 0"></a-entity>
+  
+      <!-- message board "box" --> 
+      <a-box id="messageBoard" position="1.5 2 -5.1" rotation="0 0 0" depth=".05" height="3" width="3.2" material="src: https://i.postimg.cc/hGFg8mHW/chalkboard.jpg"></a-box>
+  
+      <!-- writing on message board "box"--> 
+      <a-text value="Welcome to Space! Can you find all the planets?" position="0 3.2 -5.06" width="3" color="white"></a-text>
+      <a-text value="Zarnathia's surface is constantly shifting." position="0.1 2.8 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Kryos' surface is said to hide a vast ocean underneath." position="0.1 2.6 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Lumoria is home to bioluminescent flora." position="0.1 2.4 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Pyrolis' fiery landscape is dotted with active volcanoes." position="0.1 2.2 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Ventara has windstorms that can last for weeks." position="0.1 2.0 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Astrion has rings made of crystalline ice." position="0.1 1.8 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Odyssia is home to ancient ruins from an ancient civilization." position="0.1 1.6 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Mythra is rich in gas that gives the sky a vibrant green hue." position="0.1 1.4 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Celestara is known for its stunning auroras." position="0.1 1.2 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Nova Lux emits a vibrant glow, visible in the darkness of space." position="0.1 1.0 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="Astroth, an asteroid, has destroyed 8 planets and counting." position="0.1 0.8 -5.06" width="3" color="white" wrap-count="50"></a-text>
+      <a-text value="(click esc and the back arrow to leave space)" position="0.5 0.6 -5.06" width="3" color="white" wrap-count="50"></a-text>
+  
+      <!-- small plane by message board "box"-->
+      <a-plane position="1.5 0 -4" rotation="-90 0 0" width="3.2" height="3" material="src: https://i.postimg.cc/7YsTF3Cv/brick.jpg" ></a-plane>
+      
+  
+      <!-- background sky image-->
+      <a-sky color="#ECECEC" src="https://i.postimg.cc/26pbg3Mn/nebula-background.jpg"></a-sky>
+  
+      <!-- light source: made light come out of nova lux but that made most of the spheres really dark on one side so i added an ambient light source as well-->
+      <a-light type="ambient" color="#888"></a-light>
+      <a-light id="novaLuxLight" type="point" color="white" intensity="5" position="100 50 -100" distance="200" decay="1"></a-light>
+    </a-scene>
+  
+  
+    <!-- below is a bunch of extra added script from scouring W3 schools and aframe.io to make sure the demo worked on mobile and to add mouse over text to appear --> 
+    <script>
+      const infoText = document.querySelector('#infoText');
+  
+      // function to adjust scale for mobile
+      function adjustScale() {
+        const isMobile = AFRAME.utils.device.isMobile();
+        if (isMobile) {
+          infoText.setAttribute('scale', '0.05 0.05 0.05');
+        } else {
+          infoText.setAttribute('scale', '0.1 0.1 0.1');
+        }
+      }
+  
+      // adjust the scale initially
+      adjustScale();
+  
+      // window resize events to re-adjust the scale if needed
+      window.addEventListener('resize', adjustScale);
+  
+      // functions to show the planet name on the screen
+      function showPlanetName(event) {
+        const planetNames = {
+          zarnathia: "Zarnathia",
+          kryos: "Kryos",
+          lumoria: "Lumoria",
+          pyrolis: "Pyrolis",
+          ventara: "Ventara",
+          astrion: "Astrion",
+          odyssia: "Odyssia",
+          mythra: "Mythra",
+          celestara: "Celestara",
+          novalux: "Nova Lux",
+          astroth1: "Astroth",
+          astroth2: "Astroth"
+        };
+        infoText.setAttribute('value', `You found ${planetNames[event.target.id]}!`);
+      }
+  
+      // clears text when not mousing over
+      function clearText() {
+        infoText.setAttribute('value', '');
+      }
+  
+      // event listeners for mouse over
+      document.querySelectorAll('.clickable').forEach(entity => {
+        entity.addEventListener('mouseenter', showPlanetName);
+        entity.addEventListener('mouseleave', clearText);
+      });
+    </script>
+  </body>
+  </html>

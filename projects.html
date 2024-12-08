@@ -1,32 +1,59 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Projects - My Website</title>
+    <title>Projects</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/main.js"></script>
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="images/banner.jpg" alt="Banner Image" width="3840" height="350"></a>
-        <button id="menu-button" class="menu-button">Menu</button>
-        <nav id="nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <a href="index.html"><img src="images/banner2.png" alt="Banner Image"></a>
     </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><strong>Home</strong></a></li>
+            <li><a href="projects.html"><strong>Projects</strong></a></li>
+            <li><a href="music.html"><strong>Music</strong></a></li>
+            <li><a href="contact.html"><strong>Contact</strong></a></li>
+        </ul>
+    </nav>
+
+    <div class="page-title">Fall Semester Projects and What I Learned</div>
+    
     <main>
-        <h1>Projects</h1>
-        <div class="grid-container">
-            <!-- Your grid content here -->
-        </div>
+        
+        <article class="grid">
+
+            <figure>
+                <img src="images/aboutMe.png" alt="Personal Introduction">
+                <figcaption><strong>Humble Beginnings:</strong> Our personal introduction, was our very first assignment and it showed me how to upload a website to github and the basics of web design!</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/portfolioProject.png" alt="Portfolio Project">
+                <figcaption><strong>Portfolio Project:</strong> First time creating a template and a multi page website. It inspired this one you're looking at!</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/aFrames.png" alt="A Frames Team Project">
+                <figcaption><strong>A Frames:</strong> During our team project we were tasked with learning how to make a VR environment using A Frames. Ready to go to <a href="aframe.html">space?</a></figcaption>
+            </figure>
+
+            <figure>
+                <video width="320" height="240" controls>
+                    <source src="images/Virtual Reality Presentation.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+                <figcaption><strong> Team Project:</strong> Learned how to work together in a group setting to achieve a common goal.</figcaption>
+            </figure>
+
+        </article>
     </main>
+
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Zach Kahler</p>
     </footer>
 </body>
 </html>

@@ -10,94 +10,293 @@ body {
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    background-color: #204c39; /* Set header background color */
+    color: #fff; /* Set text color */
+    padding: 20px 0;
     position: relative;
-    width: 100%;
 }
 
 header img {
     width: 100%;
     height: auto;
+    display: block;
+    max-height: 300px;
     object-fit: cover;
 }
 
-.menu-button {
-    display: none;
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+header h3 {
+    margin: 5px 0 0;
+}
+
+/* Main Section */
+main#main-section {
+    background-color: #ffffff; /* Light green background */
+    transition: background 1s ease; /* Smooth transition for background color */
+}
+
+/* Ensure the parent container uses Flexbox */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center items */
+    justify-content: flex-start; /* Align items to the start (top) */
+}
+
+.centered-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add some margin to position below the title */
+}
+
+.centered-image img {
+    width: 300px; /* Adjust the size as needed */
+    border-radius: 50%;
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Horizontal Navigation Menu */
 .nav-menu {
     display: flex;
-    align-items: center;
     justify-content: center;
+    background-color: #204c39; /* Set background color */
+    padding: 10px 0;
 }
 
 .nav-menu ul {
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-menu li {
-    margin-right: 20px;
+    margin: 0 10px;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-menu a:hover {
+    background-color: #1e663a; /* Change to lighter green on hover */
+    font-size: 17px; /* Slightly increase font size on hover */
+}
+
+.page-title {
+    text-align: center;
+    color: #204c39;
+    padding: 20px 0;
+    font-size: 2em;
+    background-color: #ccffcc;
+}
+
+.page-title-smaller {
+    text-align: center;
+    color: #204c39;
+    padding: 20px 0;
+    font-size: 1em;
+    background-color: #ccffcc;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    .menu-button {
-        display: block; /* Show the button on small screens */
-    }
-
-    .nav-menu {
-        display: none; /* Hide horizontal nav menu on mobile */
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0; /* Ensure it takes full width on mobile */
-        flex-direction: column;
-        background-color: #204c39;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
     .nav-menu ul {
         flex-direction: column;
-        margin: 0;
-        width: 100%;
-        padding: 0;
+        align-items: center;
     }
 
     .nav-menu li {
-        width: 100%;
+        margin: 10px 0;
     }
 
     .nav-menu a {
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        display: block;
+        padding: 10px 0;
     }
 
-    .nav-menu.active {
-        display: flex; /* Show nav menu when active */
+    .page-title {
+        margin-top: 10px; /* Adjust margin for mobile */
+    }
+
+    .centered-image {
+        margin-top: 10px; /* Adjust for mobile */
+    }
+
+    .centered-image img {
+        width: 200px; /* Adjust size for mobile */
     }
 }
 
-/* Desktop Styles */
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+}
+
+#hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default for mobile */
+    gap: 20px;
+}
+
+/* 2 by 3 Grid for Desktop */
 @media (min-width: 769px) {
-    .nav-menu {
-        display: flex; /* Show horizontal nav menu on desktop */
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-rows: auto; /* As many rows as needed */
+        gap: 20px;
     }
 }
+
+section {
+    grid-column: 1 / -1; /* Ensure section takes full width */
+}
+
+figure {
+    max-width: 100%; /* Allows the figure to be 100% of its container's width */
+    width: 600px; /* Set a maximum width */
+    margin: auto; /* Center the figure element */
+    padding: 10px; /* Optional: Add some padding */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+figure video,
+figure img {
+    width: 100%; /* Make the video or image take up the full width of the figure */
+    height: auto; /* Maintain aspect ratio */
+}
+
+figcaption {
+    text-align: center;
+    background-color: #204c39; /* Set caption background color */
+    color: #fff; /* Set text color */
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #204c39; /* Set footer background color */
+    color: #fff; /* Set text color */
+    padding: 10px 0;
+}
+
+/* Image Grid */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* This creates a square aspect ratio */
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.spin-animation {
+    animation: spin 10s linear infinite; /* Slower spin animation */
+}
+
+.rainbow-gradient {
+    animation: rainbow 5s linear infinite; /* Gradient animation */
+    background: linear-gradient(270deg, #ff0000, #ffff00, #00ff00, #0000ff, #ff00ff, #ff0000);
+    background-size: 1200% 1200%;
+}
+
+.bouncing-image img {
+    position: relative; /* Use relative positioning */
+    width: 300px; /* Adjust the size as needed */
+    border-radius: 50%;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #204c39;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #1e663a; /* Darker green on hover */
+}
+
