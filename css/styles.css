@@ -1,3 +1,8 @@
+/*
+Name: Zach Kahler
+Date: 12/5/2024
+*/
+
 /* Reset */
 body, header, nav, main, footer, ul, li {
     margin: 0;
@@ -7,15 +12,16 @@ body, header, nav, main, footer, ul, li {
 
 body {
     font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header */
 header {
     text-align: center;
-    background-color: #204c39; /* Set header background color */
-    color: #fff; /* Set text color */
+    background-color: #204c39;
+    color: #fff;
     padding: 20px 0;
-    position: relative;
 }
 
 header img {
@@ -26,11 +32,10 @@ header img {
     object-fit: cover;
 }
 
-/* Horizontal Navigation Menu */
 .nav-menu {
     display: flex;
     justify-content: center;
-    background-color: #204c39; /* Set background color */
+    background-color: #204c39;
     padding: 10px 0;
     position: relative;
 }
@@ -53,13 +58,11 @@ header img {
     transition: background-color 0.3s ease, font-size 0.3s ease;
 }
 
-/* Hover Effect */
 .nav-menu a:hover {
-    background-color: #1e663a; /* Change to lighter green on hover */
-    font-size: 17px; /* Slightly increase font size on hover */
+    background-color: #1e663a;
+    font-size: 17px;
 }
 
-/* Page Title */
 .page-title, .page-title-smaller {
     text-align: center;
     color: #204c39;
@@ -72,7 +75,6 @@ header img {
     font-size: 1em;
 }
 
-/* Hamburger Menu */
 .menu-icon {
     display: none;
     flex-direction: column;
@@ -95,7 +97,7 @@ header img {
     .nav-menu ul {
         flex-direction: column;
         align-items: center;
-        display: none; /* Hide menu links by default on mobile */
+        display: none;
         background-color: #204c39;
         width: 100%;
         position: absolute;
@@ -113,26 +115,24 @@ header img {
     }
 }
 
-/* Main Section */
 main#main-section {
-    background-color: #ffffff; /* Light green background */
-    transition: background 1s ease; /* Smooth transition for background color */
+    transition: background 1s ease;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 .centered-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Add some margin to position below the title */
+    position: absolute;
 }
 
 .centered-image img {
-    width: 300px; /* Adjust the size as needed */
+    position: absolute;
+    cursor: pointer;
+    width: 200px;
     border-radius: 50%;
-    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-/* Hero Section */
 #hero {
     text-align: center;
     padding: 20px;
@@ -144,65 +144,61 @@ main#main-section {
     height: auto;
 }
 
-/* Main Content */
 main {
     padding: 20px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr; /* Default for mobile */
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
-/* 2 by 3 Grid for Desktop */
 @media (min-width: 769px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        grid-template-rows: auto; /* As many rows as needed */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
         gap: 20px;
     }
 }
 
 section {
-    grid-column: 1 / -1; /* Ensure section takes full width */
+    grid-column: 1 / -1;
 }
 
 figure {
-    max-width: 100%; /* Allows the figure to be 100% of its container's width */
-    width: 100%; /* Set a maximum width */
-    margin: auto; /* Center the figure element */
-    padding: 10px; /* Optional: Add some padding */
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    max-width: 100%;
+    width: auto;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 figure img,
 figure video {
-    width: 100%; /* Make the video or image take up the full width of the figure */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
 figcaption {
     text-align: center;
-    background-color: #204c39; /* Set caption background color */
-    color: #fff; /* Set text color */
+    background-color: #204c39;
+    color: #fff;
     padding: 10px;
 }
 
-/* Footer */
 footer {
     text-align: center;
-    background-color: #204c39; /* Set footer background color */
-    color: #fff; /* Set text color */
+    background-color: #204c39;
+    color: #fff;
     padding: 10px 0;
 }
 
-/* Image Grid */
 .image-container {
     position: relative;
     width: 100%;
-    padding-bottom: 100%; /* This creates a square aspect ratio */
+    padding-bottom: 100%;
 }
 
 .image-container img {
@@ -235,35 +231,35 @@ footer {
     to { transform: rotate(360deg); }
 }
 
+.spin-animation {
+    animation: spin 2s linear infinite;
+}
+
 @keyframes rainbow {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.spin-animation {
-    animation: spin 10s linear infinite; /* Slower spin animation */
-}
-
 .rainbow-gradient {
-    animation: rainbow 5s linear infinite; /* Gradient animation */
+    animation: rainbow 5s linear infinite;
     background: linear-gradient(270deg, #ff0000, #ffff00, #00ff00, #0000ff, #ff00ff, #ff0000);
     background-size: 1200% 1200%;
+    opacity: 80%;
 }
 
 .bouncing-image img {
-    position: relative; /* Use relative positioning */
-    width: 300px; /* Adjust the size as needed */
+    position: relative;
+    width: 300px;
     border-radius: 50%;
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
 }
 
-/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
     max-width: 600px;
-    margin: 0 auto; /* Center the form */
+    margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -293,10 +289,9 @@ form button {
 }
 
 form button:hover {
-    background-color: #1e663a; /* Darker green on hover */
+    background-color: #1e663a;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
     .nav-menu ul {
         flex-direction: column;
@@ -312,21 +307,21 @@ form button:hover {
     }
 
     .page-title {
-        margin-top: 10px; /* Adjust margin for mobile */
+        margin-top: 10px;
         font-size: 1.5em;
     }
 
     .page-title-smaller {
-        margin-top: 10px; /* Adjust margin for mobile */
+        margin-top: 10px;
         font-size: 1em;
     }
 
     .centered-image {
-        margin-top: 10px; /* Adjust for mobile */
+        margin-top: 10px;
     }
 
     .centered-image img {
-        width: 200px; /* Adjust size for mobile */
+        width: 100px;
     }
 
     form {
@@ -350,13 +345,13 @@ form button:hover {
 
     figure img,
     figure video {
-        width: 100%; /* Ensure images and videos are responsive */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        height: auto;
     }
 
     figure {
         padding: 5px;
-        border-radius: 4px; /* Adjust border radius for mobile */
+        border-radius: 4px;
     }
 
     figcaption {

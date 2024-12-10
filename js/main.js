@@ -1,3 +1,6 @@
+// Name: Zach Kahler
+// Date: 12/5/2024
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.getElementById('menu-icon');
     const menuLinks = document.getElementById('menu-links');
@@ -15,8 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check for the image and main section elements
     if (img && mainSection) {
-        let xPos = img.offsetLeft;
-        let yPos = img.offsetTop;
+        const containerWidth = mainSection.offsetWidth;
+        const containerHeight = mainSection.offsetHeight;
+
+        // Calculate initial center position
+        let xPos = (containerWidth - img.offsetWidth) / 2;
+        let yPos = (containerHeight - img.offsetHeight) / 2;
         let xSpeed = 2;
         let ySpeed = 2;
         let isAnimating = false;
@@ -26,8 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const imgWidth = img.offsetWidth;
             const imgHeight = img.offsetHeight;
-            const containerWidth = window.innerWidth;
-            const containerHeight = window.innerHeight;
 
             xPos += xSpeed;
             yPos += ySpeed;
@@ -58,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Set initial position
+        // Set initial position to center
         img.style.left = `${xPos}px`;
         img.style.top = `${yPos}px`;
     } else {
