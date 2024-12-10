@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuLinks = document.getElementById('menu-links');
     const img = document.querySelector('.centered-image img');
     const mainSection = document.getElementById('main-section');
-    
+
     // Check for the menu elements
     if (menuIcon && menuLinks) {
         menuIcon.addEventListener('click', function() {
@@ -18,24 +18,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check for the image and main section elements
     if (img && mainSection) {
-        const containerWidth = mainSection.offsetWidth;
-        const containerHeight = mainSection.offsetHeight;
-
-        // Calculate initial center position
-        let xPos = (containerWidth - img.offsetWidth) / 2;
-        let yPos = (containerHeight - img.offsetHeight) / 2;
         let xSpeed = 2;
         let ySpeed = 2;
         let isAnimating = false;
+
+        function positionImage() {
+            const containerWidth = mainSection.offsetWidth;
+            const containerHeight = mainSection.offsetHeight;
+            const imgWidth = img.offsetWidth;
+            const imgHeight = img.offsetHeight;
+            const xPos = (containerWidth - imgWidth) / 2;
+            const yPos = (containerHeight - imgHeight) / 2;
+
+            img.style.left = `${xPos}px`;
+            img.style.top = `${yPos}px`;
+        }
 
         function animate() {
             if (!isAnimating) return;
 
             const imgWidth = img.offsetWidth;
             const imgHeight = img.offsetHeight;
+            const containerWidth = mainSection.offsetWidth;
+            const containerHeight = mainSection.offsetHeight;
 
-            xPos += xSpeed;
-            yPos += ySpeed;
+            let xPos = parseInt(img.style.left) + xSpeed;
+            let yPos = parseInt(img.style.top) + ySpeed;
 
             // Check for collision with the container's borders
             if (xPos + imgWidth > containerWidth || xPos < 0) {
@@ -45,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 ySpeed = -ySpeed; // Reverse direction on y-axis
             }
 
-            img.style.left = xPos + 'px';
-            img.style.top = yPos + 'px';
+            img.style.left = `${xPos}px`;
+            img.style.top = `${yPos}px`;
 
             requestAnimationFrame(animate);
         }
@@ -64,8 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Set initial position to center
-        img.style.left = `${xPos}px`;
-        img.style.top = `${yPos}px`;
+        positionImage();
+
+        // Reposition the image on window resize to maintain centering
+        window.addEventListener('resize', positionImage);
     } else {
         console.error('Centered image or main section not found');
     }
